@@ -3,6 +3,7 @@ import 'package:seniguard/chat_bot.dart';
 import 'dart:async';
 
 import 'package:seniguard/check_list.dart';
+import 'package:seniguard/screens/walking_routes_screen.dart';
 import 'package:seniguard/mypage.dart';
 
 void main() {
@@ -195,78 +196,89 @@ class SelectPage extends StatelessWidget {
               // 산책 이동 버튼
               Positioned(
                 left: screenWidth * 0.068,
-                top: screenHeight * 0.442,
-                child: Container(
-                  width: screenWidth * 0.423,
-                  height: screenHeight * 0.316,
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        left: 0,
-                        top: 0,
-                        child: Container(
-                          width: screenWidth * 0.423,
-                          height: screenHeight * 0.316,
-                          decoration: ShapeDecoration(
-                            color: Color(0xFFEFCEFE),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
+                top: screenHeight * 0.492,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => WalkingRoutesScreen(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    width: screenWidth * 0.423,
+                    height: screenHeight * 0.316,
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          left: 0,
+                          top: 0,
+                          child: Container(
+                            width: screenWidth * 0.423,
+                            height: screenHeight * 0.316,
+                            decoration: ShapeDecoration(
+                              color: Color(0xFFEFCEFE),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+
                             ),
                           ),
                         ),
-                      ),
-                      Positioned(
-                        left: screenWidth * 0.015, // 화면에 맞게 위치 설정
-                        top: screenHeight * 0.01, // 상단 여백을 계산하여 위치 설정
-                        right: screenWidth * 0.015,
-                        bottom: screenHeight * 0.1,
-                        child: Container(
-                          width: screenWidth,
-                          height: screenHeight,
-                          decoration: ShapeDecoration(
-                            color: Color.fromARGB(255, 247, 246, 245),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
+                        Positioned(
+                          left: screenWidth * 0.015, // 화면에 맞게 위치 설정
+                          top: screenHeight * 0.01, // 상단 여백을 계산하여 위치 설정
+                          right: screenWidth * 0.015,
+                          bottom: screenHeight * 0.1,
+                          child: Container(
+                            width: screenWidth,
+                            height: screenHeight,
+                            decoration: ShapeDecoration(
+                              color: Color.fromARGB(255, 247, 246, 245),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      Positioned(
-                        left: screenWidth * 0.005, // 화면에 맞게 위치 설정
-                        top: screenHeight * 0.01, // 상단 여백을 계산하여 위치 설정
-                        right: screenWidth * 0.005,
-                        bottom: screenHeight * 0.1,
-                        child: Container(
-                          width: screenWidth, // 화면 너비에 맞게 설정
-                          height: screenHeight * 0.2, // 화면 높이에 맞게 설정
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage("images/warking_button.png"),
-                              fit: BoxFit.fitHeight, // 이미지를 화면에 맞게 커버
+                        Positioned(
+                          left: screenWidth * 0.005, // 화면에 맞게 위치 설정
+                          top: screenHeight * 0.01, // 상단 여백을 계산하여 위치 설정
+                          right: screenWidth * 0.005,
+                          bottom: screenHeight * 0.1,
+                          child: Container(
+                            width: screenWidth, // 화면 너비에 맞게 설정
+                            height: screenHeight * 0.2, // 화면 높이에 맞게 설정
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage("images/warking_button.png"),
+                                fit: BoxFit.fitHeight, // 이미지를 화면에 맞게 커버
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      Positioned(
-                        left: screenWidth * 0.088,
-                        top: screenHeight * 0.235,
-                        child: SizedBox(
-                          width: screenWidth * 0.261,
-                          height: screenHeight * 0.048,
-                          child: Text(
-                            '산책하기',
-                            style: TextStyle(
-                              color: const Color(0xFFFDF9F3),
-                              fontSize: baseFontSize * 1.0,
-                              fontFamily: 'Freesentation',
-                              fontWeight: FontWeight.w600,
-                              height: 1.2, // 줄 간격 조정
+                        Positioned(
+                          left: screenWidth * 0.088,
+                          top: screenHeight * 0.235,
+                          child: SizedBox(
+                            width: screenWidth * 0.261,
+                            height: screenHeight * 0.048,
+                            child: Text(
+                              '산책하기',
+                              style: TextStyle(
+                                color: const Color(0xFFFDF9F3),
+                                fontSize: baseFontSize * 1.0,
+                                fontFamily: 'Freesentation',
+                                fontWeight: FontWeight.w600,
+                                height: 1.2, // 줄 간격 조정
+                              ),
+                              textAlign: TextAlign.center, // 텍스트 중앙 정렬
                             ),
-                            textAlign: TextAlign.center, // 텍스트 중앙 정렬
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -359,7 +371,7 @@ class SelectPage extends StatelessWidget {
                   ),
                 ),
               ),
-              // 챗봇 이동 버튼
+              // 체봇 이동 버튼
 
               // 체크리스트 버튼
               Positioned(
