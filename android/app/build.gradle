@@ -22,7 +22,7 @@ android {
     defaultConfig {
         applicationId "com.example.seniguard"
         minSdkVersion flutter.minSdkVersion // flutter.minSdkVersion
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode project.hasProperty('flutterVersionCode') ? flutterVersionCode.toInteger() : 1
         versionName project.hasProperty('flutterVersionName') ? flutterVersionName : "1.0"
     }

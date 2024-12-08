@@ -3,7 +3,7 @@ import 'package:seniguard/chat_bot.dart';
 import 'dart:async';
 
 import 'package:seniguard/check_list.dart';
-import 'package:seniguard/screens/walking_routes_screen.dart';
+import 'package:seniguard/walking_routes_screen.dart';
 import 'package:seniguard/mypage.dart';
 
 void main() {
@@ -196,13 +196,13 @@ class SelectPage extends StatelessWidget {
               // 산책 이동 버튼
               Positioned(
                 left: screenWidth * 0.068,
-                top: screenHeight * 0.492,
+                top: screenHeight * 0.442,
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => WalkingRoutesScreen(),
+                        builder: (context) => const WalkingRoutesScreen()
                       ),
                     );
                   },
